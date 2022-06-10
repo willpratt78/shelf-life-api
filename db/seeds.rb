@@ -2,10 +2,10 @@ class Seed
 
   def self.begin
     seed = Seed.new
-    seed.generate_food
+    seed.generate_foods
   end
 
-  def generate_food
+  def generate_foods
     20.times do |i|
       food = Food.create!(
         food_item: Faker::Food.vegetables
