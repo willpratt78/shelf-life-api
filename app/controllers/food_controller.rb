@@ -1,7 +1,27 @@
 class FoodController < ApplicationController
   def index
-    @food = {"Raw Chicken": "5 days"}
+    @food = Food.all
     json_response(@food)
+  end
+
+  def show
+    @food = Food.find(params[:id])
+    json_response(@food)
+  end
+
+  def create
+    @food = Food.create(food_params)
+    json_response(@food)
+  end
+
+  def update
+    @food = Food.create(params[:id])
+    @food.update(food_params)
+  end
+
+  def destroy
+    @food = Food.find(params[:id])
+    @food.destroy
   end
 
   private
