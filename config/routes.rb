@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  routes :food
+  resources :food
 end
