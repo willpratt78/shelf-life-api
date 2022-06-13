@@ -1,3 +1,5 @@
+Food.destroy_all
+
 class Seed
 
   def self.begin
