@@ -26,7 +26,11 @@ class FoodController < ApplicationController
 
   def destroy
     @food = Food.find(params[:id])
-    @food.destroy
+    if @food.destroy!
+      render status: 200, json: {
+        message: "This item has been successfully destroyed"
+      }
+    end
   end
 
   private
