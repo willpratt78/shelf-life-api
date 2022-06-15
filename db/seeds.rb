@@ -12,7 +12,6 @@ class Seed
       food = Food.create!(
         food_item: Faker::Food.vegetables
       )
-
       puts "#{i}. #{food.food_item} is good for 3 days"
     end
   end

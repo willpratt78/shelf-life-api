@@ -1,3 +1,3 @@
 class Food < ApplicationRecord
-  validates :food, presence: true
+  validates :food_item, presence: true
 end

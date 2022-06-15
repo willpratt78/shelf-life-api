@@ -19,7 +19,7 @@ class FoodController < ApplicationController
     @food = Food.create(params[:id])
     if @food.update!(food_params)
       render status: 200, json: {
-        message: "This quote has been updated successfully."
+        message: "This item has been updated successfully."
       }
     end
   end
@@ -27,5 +27,14 @@ class FoodController < ApplicationController
   def destroy
     @food = Food.find(params[:id])
     @food.destroy
+  end
+
+  private
+  def json_response(object, status = :ok)
+    render json: object, status: status
+  end
+
+  def food_params
+    params.permit(:food_item)
   end
 end
