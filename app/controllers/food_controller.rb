@@ -16,7 +16,7 @@ class FoodController < ApplicationController
   end
 
   def update
-    @food = Food.create(params[:id])
+    @food = Food.find(params[:id])
     if @food.update!(food_params)
       render status: 200, json: {
         message: "This item has been updated successfully."
