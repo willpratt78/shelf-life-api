@@ -31,16 +31,22 @@ Application will have you enter info into postman and you can get the desired in
 * Run rake db:create
 * Run rails s
 * run rake db:seed
-* Navigate Postman
-* http://localhost:3000/food to get all foods in API
+* Navigate to Postman
+* Get http://localhost:3000/food will list all items in the API
+* Post http://localhost:3000/food with key value food_item to add a new item to the api
+* Put http://localhost:3000/food/:id will allow you to update, you'll get a conformaiton message and can check it it's been updated with Get http://localhost:3000/food/:id
+* Delete Get http://localhost:3000/food/:id will delete an item from the API
 
 ## Known Bugs
 
-* Faker not currently seeding properly
+* No known bugs
 
 ## Further Exploration
 
-* Planning on working pagination once I can get faker working
+* CORS has been implemented successfully
+* Uncommented rack-cors in gemfile updated cors.rb 
+* Changed so that other users can only make GET requests and is acceptable form all websites
+* If you want to restrict what websites can use so specify on line 10 in config/initializers/cors
 
 ## License
 
